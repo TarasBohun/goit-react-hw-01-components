@@ -1,28 +1,33 @@
-import { Profile } from './Profile/Profile';
+import { Profile } from './Profile';
 import user from '../Data/user.json';
 
-import { Statistics } from './Statistics/Statistics';
+import { Statistics } from './Statistics';
 import data from '../Data/data.json';
 
-import { FriendList } from './Friends/FriendList';
+import { FriendList } from './Friends';
 import friends from '../Data/friends.json';
 
-import { Transaction } from './Transactions/TransactionFistory';
+import { Transaction } from './Transactions';
 import transactions from '../Data/transactions.json';
+
+import { GlobalStyle } from './GlobalStyle';
+import { Container } from './Container';
 
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101',
-      }}
-    >
+    // <div
+    //   style={{
+    //     height: '100vh',
+    //     display: 'flex',
+    //     justifyContent: 'center',
+    //     alignItems: 'center',
+    //     fontSize: 40,
+    //     color: '#010101',
+    //   }}
+    // >
+    <Container>
       {' '}
+      <GlobalStyle />
       <Profile
         // item={user}
         username={user.username}
@@ -34,6 +39,7 @@ export const App = () => {
       <Statistics title="Upload stats" stats={data} />
       <FriendList items={friends} />
       <Transaction items={transactions} />
-    </div>
+    </Container>
+    /* </div> */
   );
 };
