@@ -5,7 +5,8 @@ import { Container, Item, List, Stats, Title } from './Statistics.styled';
 export const Statistics = ({ title, stats }) => {
   return (
     <Container>
-      <Title>{title}</Title>
+      {title && <Title>{title}</Title>}
+
       <List>
         {stats.map(stat => {
           return (
